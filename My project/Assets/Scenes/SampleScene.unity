@@ -5515,7 +5515,7 @@ GameObject:
   - component: {fileID: 1686844256}
   - component: {fileID: 1686844255}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Torre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5868,7 +5868,7 @@ GameObject:
   - component: {fileID: 1761744015}
   - component: {fileID: 1761744014}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Ballesta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
