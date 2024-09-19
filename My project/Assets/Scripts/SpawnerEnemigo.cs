@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab; // Prefab del enemigo que vas a instanciar
-    public Transform spawnPoint;   // Punto fijo donde el enemigo aparecerá
-    public float spawnInterval = 3f; // Tiempo entre spawns
+    public GameObject enemyPrefab; 
+    public Transform spawnPoint;  
+    public float spawnInterval = 3f;
 
     private float spawnTimer;
 
     void Start(){
-        spawnTimer = spawnInterval; // Inicializamos el temporizador
+        spawnTimer = spawnInterval;
     }
 
     void Update(){
-        spawnTimer -= Time.deltaTime; // Reducimos el tiempo con cada frame
+        spawnTimer -= Time.deltaTime;
 
         if (spawnTimer <= 0){
-            SpawnEnemy(); // Generamos un enemigo
-            spawnTimer = spawnInterval; // Reseteamos el temporizador
+            SpawnEnemy();
+            spawnTimer = spawnInterval;
         }
     }
 
     void SpawnEnemy(){
-        // Instanciamos el enemigo en el punto fijo de spawn
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 }
