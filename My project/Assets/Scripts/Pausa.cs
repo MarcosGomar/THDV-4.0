@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
     private bool isPaused = false;
+    public FirstPersonLook cameraController;
 
     void Update()
     {
@@ -31,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        cameraController.enabled = false;
     }
 
     public void Resumir()
@@ -40,6 +42,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        cameraController.enabled = true;
     }
 
     public void VolverAlMenu()

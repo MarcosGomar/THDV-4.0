@@ -89,14 +89,14 @@ public class SubirAlObjeto : MonoBehaviour
     void Subir()
     {
         Debug.Log("Subiendo al objeto");
-        posicionObjetivo = objetoASubir.transform.position + new Vector3(100, 50, 0);
+        posicionObjetivo = objetoASubir.transform.position + new Vector3(100, 10, 0);
         estaSubiendo = true;
     }
 
     void Bajar()
     {
         Debug.Log("Bajando del objeto");
-        posicionObjetivo = objetoASubir.transform.position + new Vector3(100, -50, 0);
+        posicionObjetivo = objetoASubir.transform.position + new Vector3(100, -10, 0);
         estaBajando = true;
     }
 

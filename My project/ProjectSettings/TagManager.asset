@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - pausePanel
+  - Enemigo
+  - Ballesta
   layers:
   - Default
   - TransparentFX
