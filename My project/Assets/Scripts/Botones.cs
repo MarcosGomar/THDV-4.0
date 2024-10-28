@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
@@ -19,5 +17,12 @@ public class MenuController : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Application.Quit();
+    }
+
+    public void Book()
+    {
+        SceneManager.LoadScene("Book");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

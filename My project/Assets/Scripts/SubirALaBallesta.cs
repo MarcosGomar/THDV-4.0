@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SubirAlObjeto : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class SubirAlObjeto : MonoBehaviour
     public float velocidadDeSubida = 2f; 
     public float velocidadDeBajada = 2f; 
     public float tiempoDeEsperaParaRegresar = 10f; 
+    public TextMeshProUGUI textoVidaTorreEnemiga;
     private float contadorTiempo = 0f;
     private bool cercaDelObjeto = false;
     private bool estaSubiendo = false;
@@ -16,10 +19,12 @@ public class SubirAlObjeto : MonoBehaviour
     private bool regresando = false; 
     private Vector3 posicionInicial;
     private Vector3 posicionObjetivo;
+    private int vidaTorreEnemiga = 100;
 
     void Start()
     {
         posicionInicial = transform.position;
+        ActualizarTextoVida();
     }
 
     void Update()
@@ -71,6 +76,7 @@ public class SubirAlObjeto : MonoBehaviour
             if (Vector3.Distance(transform.position, posicionObjetivo) < 0.1f)
             {
                 estaBajando = false;
+                ReducirVidaTorre();
             }
         }
 
@@ -105,5 +111,26 @@ public class SubirAlObjeto : MonoBehaviour
         Debug.Log("Regresando el objeto a su posición original");
         posicionObjetivo = posicionInicial; 
         regresando = true; 
+    }
+
+    void ReducirVidaTorre() //he tenido que hardcodear el da;o a la torre enemiga por que los colliders no estaban funcionando
+    {
+        vidaTorreEnemiga -= 10;
+        if (vidaTorreEnemiga <= 0)
+        {
+            vidaTorreEnemiga = 0;
+            SceneManager.LoadScene("Main Menu");
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        ActualizarTextoVida();
+    }
+
+    void ActualizarTextoVida()
+    {
+        if (textoVidaTorreEnemiga != null)
+        {
+            textoVidaTorreEnemiga.text = "Vida de la Torre: " + vidaTorreEnemiga;
+        }
     }
 }
