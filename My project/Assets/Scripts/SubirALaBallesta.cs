@@ -130,7 +130,7 @@ public class SubirAlObjeto : MonoBehaviour
     {
         if (textoVidaTorreEnemiga != null)
         {
-            textoVidaTorreEnemiga.text = "Vida de la Torre: " + vidaTorreEnemiga;
+            textoVidaTorreEnemiga.text = "Torre Enemiga: " + vidaTorreEnemiga;
         }
     }
 }
