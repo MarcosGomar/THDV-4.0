@@ -6,20 +6,20 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab; 
     public Transform spawnPoint;  
-    public float spawnInterval = 3f;
+    //public float spawnInterval = 3f;
+    public EnemySpawnerData spawnerData;
 
     private float spawnTimer;
 
     void Start(){
-        spawnTimer = spawnInterval;
+        spawnTimer = spawnerData.spawnInterval;
     }
-
     void Update(){
         spawnTimer -= Time.deltaTime;
 
         if (spawnTimer <= 0){
             SpawnEnemy();
-            spawnTimer = spawnInterval;
+            spawnTimer = spawnerData.spawnInterval;
         }
     }
 
