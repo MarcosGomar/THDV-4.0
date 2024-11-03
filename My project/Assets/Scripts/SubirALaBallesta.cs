@@ -12,6 +12,7 @@ public class SubirAlObjeto : MonoBehaviour
     public float velocidadDeBajada = 2f; 
     public float tiempoDeEsperaParaRegresar = 10f; 
     public TextMeshProUGUI textoVidaTorreEnemiga;
+    public TextMeshProUGUI textoInteraccion;
     private float contadorTiempo = 0f;
     private bool cercaDelObjeto = false;
     private bool estaSubiendo = false;
@@ -25,6 +26,11 @@ public class SubirAlObjeto : MonoBehaviour
     {
         posicionInicial = transform.position;
         ActualizarTextoVida();
+        if (textoInteraccion != null)
+        {
+            textoInteraccion.gameObject.SetActive(false); 
+            textoInteraccion.text = "Manten E puedes disparar"; 
+        }
     }
 
     void Update()
@@ -39,6 +45,11 @@ public class SubirAlObjeto : MonoBehaviour
         else
         {
             cercaDelObjeto = false;
+        }
+
+        if (textoInteraccion != null)
+        {
+            textoInteraccion.gameObject.SetActive(cercaDelObjeto);
         }
 
         Debug.Log("¿Está cerca del objeto?: " + cercaDelObjeto);  
