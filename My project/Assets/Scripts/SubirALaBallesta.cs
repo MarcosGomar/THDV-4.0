@@ -6,13 +6,10 @@ public class SubirAlObjeto : MonoBehaviour
 {
     public GameObject objetoASubir;
     public GameObject jugador;
-    public float distanciaParaSubir = 1f;
-    public float tiempoParaSubir = 1f;
-    public float velocidadDeSubida = 2f; 
-    public float velocidadDeBajada = 2f; 
-    public float tiempoDeEsperaParaRegresar = 10f; 
+    public BallestaSO ballestaConfig; // Referencia al ScriptableObject
     public TextMeshProUGUI textoVidaTorreEnemiga;
     public TextMeshProUGUI textoInteraccion;
+
     private float contadorTiempo = 0f;
     private bool cercaDelObjeto = false;
     private bool estaSubiendo = false;
@@ -20,16 +17,18 @@ public class SubirAlObjeto : MonoBehaviour
     private bool regresando = false; 
     private Vector3 posicionInicial;
     private Vector3 posicionObjetivo;
-    private int vidaTorreEnemiga = 100;
+    private int vidaTorreEnemiga;
 
     void Start()
     {
         posicionInicial = transform.position;
+        vidaTorreEnemiga = ballestaConfig.vidaInicialTorreEnemiga;
         ActualizarTextoVida();
+
         if (textoInteraccion != null)
         {
             textoInteraccion.gameObject.SetActive(false); 
-            textoInteraccion.text = "Manten E puedes disparar"; 
+            textoInteraccion.text = ballestaConfig.textoInteraccion; 
         }
     }
 
@@ -38,7 +37,7 @@ public class SubirAlObjeto : MonoBehaviour
         float distancia = Vector3.Distance(jugador.transform.position, objetoASubir.transform.position);
         Debug.Log("Distancia al objeto: " + distancia);  
 
-        if (distancia <= distanciaParaSubir)
+        if (distancia <= ballestaConfig.distanciaParaSubir) 
         {
             cercaDelObjeto = true;
         }
@@ -58,7 +57,7 @@ public class SubirAlObjeto : MonoBehaviour
         {
             contadorTiempo += Time.deltaTime;
 
-            if (contadorTiempo >= tiempoParaSubir && !estaSubiendo)
+            if (contadorTiempo >= ballestaConfig.tiempoParaSubir && !estaSubiendo)
             {
                 Subir();
             }
@@ -70,19 +69,19 @@ public class SubirAlObjeto : MonoBehaviour
 
         if (estaSubiendo)
         {
-            transform.position = Vector3.Lerp(transform.position, posicionObjetivo, Time.deltaTime * velocidadDeSubida);
+            transform.position = Vector3.Lerp(transform.position, posicionObjetivo, Time.deltaTime * ballestaConfig.velocidadDeSubida); 
 
             if (Vector3.Distance(transform.position, posicionObjetivo) < 0.1f)
             {
                 estaSubiendo = false;
                 Invoke("Bajar", 0.1f);
-                Invoke("RegresarAPosicionInicial", tiempoDeEsperaParaRegresar); 
+                Invoke("RegresarAPosicionInicial", ballestaConfig.tiempoDeEsperaParaRegresar); 
             }
         }
 
         if (estaBajando)
         {
-            transform.position = Vector3.Lerp(transform.position, posicionObjetivo, Time.deltaTime * velocidadDeBajada);
+            transform.position = Vector3.Lerp(transform.position, posicionObjetivo, Time.deltaTime * ballestaConfig.velocidadDeBajada); 
 
             if (Vector3.Distance(transform.position, posicionObjetivo) < 0.1f)
             {
@@ -93,7 +92,7 @@ public class SubirAlObjeto : MonoBehaviour
 
         if (regresando)
         {
-            transform.position = Vector3.Lerp(transform.position, posicionObjetivo, Time.deltaTime * velocidadDeBajada);
+            transform.position = Vector3.Lerp(transform.position, posicionObjetivo, Time.deltaTime * ballestaConfig.velocidadDeBajada); 
 
             if (Vector3.Distance(transform.position, posicionObjetivo) < 0.1f)
             {
@@ -141,7 +140,7 @@ public class SubirAlObjeto : MonoBehaviour
     {
         if (textoVidaTorreEnemiga != null)
         {
-            textoVidaTorreEnemiga.text = "Torre Enemiga: " + vidaTorreEnemiga;
+            textoVidaTorreEnemiga.text = vidaTorreEnemiga + ballestaConfig.textoVidaTorre ; 
         }
     }
 }

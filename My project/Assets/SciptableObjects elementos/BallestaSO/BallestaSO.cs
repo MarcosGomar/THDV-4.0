@@ -12,6 +12,6 @@ public class BallestaSO : ScriptableObject
     public float velocidadDeBajada = 2f;
     public float tiempoDeEsperaParaRegresar = 10f;
     public int vidaInicialTorreEnemiga = 100;
-    public string textoInteraccion = "Mantén E para interactuar y disparar";
-    public string textoVidaTorre = "Torre Enemiga: ";
+    public string textoInteraccion = "Mantén E para disparar";
+    public string textoVidaTorre = " :Torre Enemiga";
 }
