@@ -20652,6 +20652,7 @@ GameObject:
   - component: {fileID: 780228457}
   - component: {fileID: 780228459}
   - component: {fileID: 780228458}
+  - component: {fileID: 780228460}
   m_Layer: 5
   m_Name: EnemigoText
   m_TagString: Untagged
@@ -20775,6 +20776,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780228456}
   m_CullTransparentMesh: 1
+--- !u!114 &780228460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780228456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e4a4ca28c1bbe4583ca96fd60405f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HudTarget: {fileID: 904686716}
 --- !u!1 &780381566
 GameObject:
   m_ObjectHideFlags: 0
@@ -22465,6 +22479,7 @@ GameObject:
   - component: {fileID: 976008449}
   - component: {fileID: 976008451}
   - component: {fileID: 976008450}
+  - component: {fileID: 976008452}
   m_Layer: 5
   m_Name: EnemigoText
   m_TagString: Untagged
@@ -22588,6 +22603,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976008448}
   m_CullTransparentMesh: 1
+--- !u!114 &976008452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976008448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e4a4ca28c1bbe4583ca96fd60405f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HudTarget: {fileID: 904686716}
 --- !u!1 &977800805
 GameObject:
   m_ObjectHideFlags: 0
@@ -22599,6 +22627,7 @@ GameObject:
   - component: {fileID: 977800806}
   - component: {fileID: 977800808}
   - component: {fileID: 977800807}
+  - component: {fileID: 977800809}
   m_Layer: 5
   m_Name: EnemigoText
   m_TagString: Untagged
@@ -22722,6 +22751,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977800805}
   m_CullTransparentMesh: 1
+--- !u!114 &977800809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977800805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e4a4ca28c1bbe4583ca96fd60405f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HudTarget: {fileID: 904686716}
 --- !u!43 &993883878
 Mesh:
   m_ObjectHideFlags: 0
@@ -23644,6 +23686,7 @@ GameObject:
   - component: {fileID: 1132728963}
   - component: {fileID: 1132728965}
   - component: {fileID: 1132728964}
+  - component: {fileID: 1132728966}
   m_Layer: 5
   m_Name: EnemigoText
   m_TagString: Untagged
@@ -23767,6 +23810,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132728962}
   m_CullTransparentMesh: 1
+--- !u!114 &1132728966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132728962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e4a4ca28c1bbe4583ca96fd60405f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HudTarget: {fileID: 904686716}
 --- !u!1 &1152506193
 GameObject:
   m_ObjectHideFlags: 0
@@ -24251,6 +24307,7 @@ GameObject:
   - component: {fileID: 1168498940}
   - component: {fileID: 1168498942}
   - component: {fileID: 1168498941}
+  - component: {fileID: 1168498943}
   m_Layer: 5
   m_Name: EnemigoText
   m_TagString: Untagged
@@ -24374,6 +24431,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168498939}
   m_CullTransparentMesh: 1
+--- !u!114 &1168498943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168498939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e4a4ca28c1bbe4583ca96fd60405f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HudTarget: {fileID: 904686716}
 --- !u!1 &1173222848
 GameObject:
   m_ObjectHideFlags: 0
@@ -25674,6 +25744,7 @@ GameObject:
   - component: {fileID: 1430542559}
   - component: {fileID: 1430542561}
   - component: {fileID: 1430542560}
+  - component: {fileID: 1430542562}
   m_Layer: 5
   m_Name: EnemigoText
   m_TagString: Untagged
@@ -25797,6 +25868,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430542558}
   m_CullTransparentMesh: 1
+--- !u!114 &1430542562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430542558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e4a4ca28c1bbe4583ca96fd60405f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HudTarget: {fileID: 904686716}
 --- !u!1 &1449003168
 GameObject:
   m_ObjectHideFlags: 0
