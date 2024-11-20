@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3eaa9ad68cfc0034aac223cb60e831ab, type: 3}
-  m_Name: Ballesta
+  m_Name: TrebuchetSO
   m_EditorClassIdentifier: 
   distanciaParaSubir: 10
   tiempoParaSubir: 1
   velocidadDeSubida: 7
   velocidadDeBajada: 7
-  tiempoDeEsperaParaRegresar: 10
+  tiempoDeEsperaParaRegresar: 12
   vidaInicialTorreEnemiga: 100
   textoInteraccion: "Mant\xE9n E para disparar"
   textoVidaTorre: ' :Torre Enemiga'
-  "da\xF1oTorre": 10
+  "da\xF1oTorre": 15

@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public Transform target;
     public float speed = 5f; 
     public GameObject sword; 
+    //aca irian los elementos para las monedas
+    
 
     void Update()
     {
@@ -23,6 +25,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject == sword)
         {
+            //agregar droppable de monedas
             Destroy(gameObject);
         }
     }

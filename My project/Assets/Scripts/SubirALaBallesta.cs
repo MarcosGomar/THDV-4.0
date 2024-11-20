@@ -125,7 +125,7 @@ public class SubirAlObjeto : MonoBehaviour
 
     void ReducirVidaTorre() //he tenido que hardcodear el da;o a la torre enemiga por que los colliders no estaban funcionando
     {
-        vidaTorreEnemiga -= 10;
+        vidaTorreEnemiga -= ballestaConfig.dañoTorre; // Utiliza el daño configurado
         if (vidaTorreEnemiga <= 0)
         {
             vidaTorreEnemiga = 0;
