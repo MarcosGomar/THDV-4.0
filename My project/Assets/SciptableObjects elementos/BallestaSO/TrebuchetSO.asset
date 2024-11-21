@@ -16,8 +16,8 @@ MonoBehaviour:
   tiempoParaSubir: 1
   velocidadDeSubida: 7
   velocidadDeBajada: 7
-  tiempoDeEsperaParaRegresar: 12
+  tiempoDeEsperaParaRegresar: 3
   vidaInicialTorreEnemiga: 100
   textoInteraccion: "Mant\xE9n E para disparar"
   textoVidaTorre: ' :Torre Enemiga'
-  "da\xF1oTorre": 15
+  "da\xF1oTorre": 5

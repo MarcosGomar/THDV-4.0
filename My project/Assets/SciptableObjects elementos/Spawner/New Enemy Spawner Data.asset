@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45189b67798e9dd40802e760fb13abd7, type: 3}
   m_Name: New Enemy Spawner Data
   m_EditorClassIdentifier: 
-  spawnInterval: 25
+  spawnInterval: 22

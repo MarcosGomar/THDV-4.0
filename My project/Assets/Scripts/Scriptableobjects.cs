@@ -12,5 +12,5 @@ public class MostrarInformacionSO : ScriptableObject
     public string nombre;
     public string dano;
     public string recarga;
-    public string estadoPrototipo;
+    //public string estadoPrototipo;
 }

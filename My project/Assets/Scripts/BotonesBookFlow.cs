@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BotonesBookFlow : MonoBehaviour
+public class BotonesBook : MonoBehaviour
 {
     public void Volver()
     {

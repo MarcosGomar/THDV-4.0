@@ -11,7 +11,7 @@ public class AsignarValores : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nombreUI;
     [SerializeField] private TextMeshProUGUI danoUI;
     [SerializeField] private TextMeshProUGUI recargaUI;
-    [SerializeField] private TextMeshProUGUI estadoPrototipoUI;
+    //[SerializeField] private TextMeshProUGUI estadoPrototipoUI;
     private void Start()
     {
         if (armaInfo != null)
@@ -30,6 +30,6 @@ public class AsignarValores : MonoBehaviour
         nombreUI.text = armaInfo.nombre;
         danoUI.text = "Daño: " + armaInfo.dano.ToString();
         recargaUI.text = "Recarga: " + armaInfo.recarga.ToString() + " segundos";
-        estadoPrototipoUI.text = armaInfo.estadoPrototipo;
+        //estadoPrototipoUI.text = armaInfo.estadoPrototipo;
     }
 }
