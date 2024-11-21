@@ -1181,7 +1181,7 @@ MonoBehaviour:
   botonTrebuchet: {fileID: 1587467225}
   textoBotonBallesta: {fileID: 274011397}
   textoBotonTrebuchet: {fileID: 1642996223}
-  costoCompraBotonTrebuchet: 100
+  costoCompraBotonTrebuchet: 1
 --- !u!4 &342970008
 Transform:
   m_ObjectHideFlags: 0

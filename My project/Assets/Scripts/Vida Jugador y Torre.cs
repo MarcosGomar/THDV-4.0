@@ -65,7 +65,7 @@ public class VidaJugadoryTorre : MonoBehaviour
         if (collision.gameObject.tag == "Enemigo")
         {
             collisionTime += Time.deltaTime;
-            if (collisionTime >= 6f)
+            if (collisionTime >= 5f)
             {
                 Daño(vidaEntidad.damageAmount);
                 collisionTime = 0f;
