@@ -19,6 +19,10 @@ public class BotonesBookSeleccion : MonoBehaviour
 
     private void Start()
     {
+        botonBallestaEnUso = PlayerPrefs.GetInt("botonBallestaEnUso", 1) == 1;
+        botonTrebuchetComprado = PlayerPrefs.GetInt("botonTrebuchetComprado", 0) == 1;
+        botonTrebuchetEnUso = PlayerPrefs.GetInt("botonTrebuchetEnUso", 0) == 1;
+
         ActualizarTextoBotonBallesta();
         ActualizarTextoBotonTrebuchet();
 
@@ -31,9 +35,10 @@ public class BotonesBookSeleccion : MonoBehaviour
         if (!botonBallestaEnUso)
         {
             botonBallestaEnUso = true;
-            botonTrebuchetEnUso = false; // Si seleccionas este, el otro deja de estar en uso
+            botonTrebuchetEnUso = false;
             ActualizarTextoBotonBallesta();
             ActualizarTextoBotonTrebuchet();
+            SaveButtonStates();
         }
     }
 
@@ -55,6 +60,7 @@ public class BotonesBookSeleccion : MonoBehaviour
                 botonBallestaEnUso = false;
                 ActualizarTextoBotonBallesta();
                 ActualizarTextoBotonTrebuchet();
+                SaveButtonStates();
             }
             else
             {
@@ -64,9 +70,10 @@ public class BotonesBookSeleccion : MonoBehaviour
         else if (!botonTrebuchetEnUso)
         {
             botonTrebuchetEnUso = true;
-            botonBallestaEnUso = false; // Desactiva el uso del otro botón
+            botonBallestaEnUso = false;
             ActualizarTextoBotonBallesta();
             ActualizarTextoBotonTrebuchet();
+            SaveButtonStates();
         }
     }
 
@@ -96,5 +103,13 @@ public class BotonesBookSeleccion : MonoBehaviour
         {
             textoBotonTrebuchet.text = "Seleccionar";
         }
+    }
+
+    private void SaveButtonStates()
+    {
+        PlayerPrefs.SetInt("botonBallestaEnUso", botonBallestaEnUso ? 1 : 0);
+        PlayerPrefs.SetInt("botonTrebuchetComprado", botonTrebuchetComprado ? 1 : 0);
+        PlayerPrefs.SetInt("botonTrebuchetEnUso", botonTrebuchetEnUso ? 1 : 0);
+        PlayerPrefs.Save();
     }
 }
