@@ -6,23 +6,19 @@ using TMPro;
 
 public class BotonesBookSeleccion : MonoBehaviour
 {
-    public Button botonBallesta; 
-    public Button botonTrebuchet; 
+    public Button botonBallesta;
+    public Button botonTrebuchet;
     public TextMeshProUGUI textoBotonBallesta;
     public TextMeshProUGUI textoBotonTrebuchet;
 
-    private bool botonBallestaEnUso = true;
-    private bool botonTrebuchetComprado = false;
-    private bool botonTrebuchetEnUso = false;
-
     public int costoCompraBotonTrebuchet = 100;
+
+    private static bool botonBallestaEnUso = true;
+    private static bool botonTrebuchetComprado = false;
+    private static bool botonTrebuchetEnUso = false;
 
     private void Start()
     {
-        botonBallestaEnUso = PlayerPrefs.GetInt("botonBallestaEnUso", 1) == 1;
-        botonTrebuchetComprado = PlayerPrefs.GetInt("botonTrebuchetComprado", 0) == 1;
-        botonTrebuchetEnUso = PlayerPrefs.GetInt("botonTrebuchetEnUso", 0) == 1;
-
         ActualizarTextoBotonBallesta();
         ActualizarTextoBotonTrebuchet();
 
@@ -38,7 +34,6 @@ public class BotonesBookSeleccion : MonoBehaviour
             botonTrebuchetEnUso = false;
             ActualizarTextoBotonBallesta();
             ActualizarTextoBotonTrebuchet();
-            SaveButtonStates();
         }
     }
 
@@ -46,7 +41,7 @@ public class BotonesBookSeleccion : MonoBehaviour
     {
         if (Monedas.instancia == null)
         {
-            Debug.Log("El Objeto Monedas no está presente, juega una partida y mata enemigos para conseguir");
+            Debug.Log("El Objeto Monedas no está presente, juega una partida y mata enemigos para conseguir monedas.");
             return;
         }
 
@@ -60,7 +55,6 @@ public class BotonesBookSeleccion : MonoBehaviour
                 botonBallestaEnUso = false;
                 ActualizarTextoBotonBallesta();
                 ActualizarTextoBotonTrebuchet();
-                SaveButtonStates();
             }
             else
             {
@@ -73,7 +67,6 @@ public class BotonesBookSeleccion : MonoBehaviour
             botonBallestaEnUso = false;
             ActualizarTextoBotonBallesta();
             ActualizarTextoBotonTrebuchet();
-            SaveButtonStates();
         }
     }
 
@@ -105,11 +98,13 @@ public class BotonesBookSeleccion : MonoBehaviour
         }
     }
 
-    private void SaveButtonStates()
+    public static bool EsBallestaEnUso()
     {
-        PlayerPrefs.SetInt("botonBallestaEnUso", botonBallestaEnUso ? 1 : 0);
-        PlayerPrefs.SetInt("botonTrebuchetComprado", botonTrebuchetComprado ? 1 : 0);
-        PlayerPrefs.SetInt("botonTrebuchetEnUso", botonTrebuchetEnUso ? 1 : 0);
-        PlayerPrefs.Save();
+        return botonBallestaEnUso;
+    }
+
+    public static bool EsTrebuchetEnUso()
+    {
+        return botonTrebuchetEnUso;
     }
 }

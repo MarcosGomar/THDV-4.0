@@ -6,7 +6,7 @@ public class SubirAlObjeto : MonoBehaviour
 {
     public GameObject objetoASubir;
     public GameObject jugador;
-    public BallestaSO ballestaConfig; // Referencia al ScriptableObject
+    public BallestaSO ballestaConfig; 
     public TextMeshProUGUI textoVidaTorreEnemiga;
     public TextMeshProUGUI textoInteraccion;
 
