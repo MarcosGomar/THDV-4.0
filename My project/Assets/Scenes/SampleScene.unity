@@ -29993,7 +29993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  pushDistance: 1
+  pushDistance: 5
   damage: 0
 --- !u!65 &1304305770
 BoxCollider:

@@ -27,7 +27,9 @@ public class EnemyArcher : MonoBehaviour
 
     void ShootArrow()
     {
-        firePoint.LookAt(player.position);
+        Vector3 adjustedTarget = player.position;
+        adjustedTarget.y += 1f;
+        firePoint.LookAt(adjustedTarget);
         GameObject arrow = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
         arrow.SetActive(true); 
     }
