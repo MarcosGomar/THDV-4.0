@@ -1137,6 +1137,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7652f90b9fbb48347a468793def3fdc1, type: 2}
+    - target: {fileID: 114963311885979670, guid: 11aaea5348574644a9eb4f4504fcce3f,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114963311885979670, guid: 11aaea5348574644a9eb4f4504fcce3f,
+        type: 3}
+      propertyPath: runSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -19550,7 +19560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1686844260}
-  speed: 2
+  speed: 1.8
   sword: {fileID: 900658714}
 --- !u!54 &602279062
 Rigidbody:
@@ -29992,7 +30002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d57561b10bbfe84182f33771e972658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
   pushDistance: 5
   damage: 0
 --- !u!65 &1304305770

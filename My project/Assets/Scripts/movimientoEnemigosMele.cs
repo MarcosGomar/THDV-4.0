@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Transform target;
-    public float speed = 5f; 
+    public float speed = 1f; 
     public GameObject sword;     
 
     void Update()
