@@ -4,10 +4,8 @@ using UnityEngine;
 public class ArrowPool : MonoBehaviour
 {
     public static ArrowPool Instance;
-
-    public GameObject arrowPrefab;  // Prefab de la flecha
-    public int poolSize = 10;       // Tamaño de la piscina
-
+    public GameObject arrowPrefab; 
+    public int poolSize = 10;
     private List<GameObject> arrows;
 
     void Awake()
@@ -19,7 +17,6 @@ public class ArrowPool : MonoBehaviour
     {
         arrows = new List<GameObject>();
 
-        // Crear las flechas iniciales en la piscina
         for (int i = 0; i < poolSize; i++)
         {
             GameObject arrow = Instantiate(arrowPrefab);
@@ -27,8 +24,7 @@ public class ArrowPool : MonoBehaviour
             arrows.Add(arrow);
         }
     }
-
-    // Método para obtener una flecha de la piscina
+    
     public GameObject GetArrow()
     {
         foreach (GameObject arrow in arrows)
@@ -39,8 +35,6 @@ public class ArrowPool : MonoBehaviour
                 return arrow;
             }
         }
-
-        // Si no hay flechas disponibles, creamos una nueva y la añadimos a la piscina
         GameObject newArrow = Instantiate(arrowPrefab);
         newArrow.SetActive(true);
         arrows.Add(newArrow);
