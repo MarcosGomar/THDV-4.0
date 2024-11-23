@@ -53,7 +53,7 @@ public class VidaJugadoryTorre : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemigo")
+        if (collision.gameObject.tag == "Enemigo" && !EscudoActivo()) // Agregada verificación de si el escudo está activo
         {
             Daño(vidaEntidad.damageAmount);
             collisionTime = 0f;
@@ -62,7 +62,7 @@ public class VidaJugadoryTorre : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemigo")
+        if (collision.gameObject.tag == "Enemigo" && !EscudoActivo()) // Agregada verificación de si el escudo está activo
         {
             collisionTime += Time.deltaTime;
             if (collisionTime >= 5f)
@@ -79,5 +79,11 @@ public class VidaJugadoryTorre : MonoBehaviour
         {
             collisionTime = 0f;
         }
+    }
+
+    private bool EscudoActivo() // Método añadido para verificar si el escudo está activo
+    {
+        Transform shieldTransform = transform.Find("Escudo");
+        return shieldTransform != null && shieldTransform.gameObject.activeInHierarchy;
     }
 }

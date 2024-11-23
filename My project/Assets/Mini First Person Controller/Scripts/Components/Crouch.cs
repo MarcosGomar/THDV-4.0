@@ -22,6 +22,8 @@ public class Crouch : MonoBehaviour
     [HideInInspector]
     public float? defaultColliderHeight;
 
+    public GameObject escudo;
+
     public bool IsCrouched { get; private set; }
     public event System.Action CrouchStart, CrouchEnd;
 
@@ -81,6 +83,7 @@ public class Crouch : MonoBehaviour
             {
                 IsCrouched = true;
                 SetSpeedOverrideActive(true);
+                ActivateShield(true);
                 CrouchStart?.Invoke();
             }
         }
@@ -104,11 +107,19 @@ public class Crouch : MonoBehaviour
                 // Reset IsCrouched.
                 IsCrouched = false;
                 SetSpeedOverrideActive(false);
+                ActivateShield(false);
                 CrouchEnd?.Invoke();
             }
         }
     }
-
+    
+    void ActivateShield(bool state)
+    {
+        if (escudo)
+        {
+            escudo.SetActive(state);
+        }
+    }
 
     #region Speed override.
     void SetSpeedOverrideActive(bool state)

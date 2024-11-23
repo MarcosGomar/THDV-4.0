@@ -15,10 +15,22 @@ public class Arrow : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
+            // Verificar si el player tiene el escudo activo
             VidaJugadoryTorre playerHealth = collision.collider.GetComponent<VidaJugadoryTorre>();
             if (playerHealth != null)
             {
-                playerHealth.Daño(damage);
+                Transform shieldTransform = collision.collider.transform.Find("Escudo");
+                if (shieldTransform != null && shieldTransform.gameObject.activeInHierarchy)
+                {
+                    // Si el escudo está activo, destruimos la flecha y no aplicamos daño
+                    Destroy(gameObject);
+                    return;
+                }
+                else
+                {
+                    // Si no tiene escudo, aplicar daño y empuje
+                    playerHealth.Daño(damage);
+                }
             }
 
             Rigidbody playerRb = collision.collider.GetComponent<Rigidbody>();
@@ -32,6 +44,10 @@ public class Arrow : MonoBehaviour
                 playerRb.MovePosition(collision.collider.transform.position + pushDirection * pushDistance);
             }
         }
-        Destroy(gameObject);
+        else
+        {
+            // Destruir la flecha al colisionar con cualquier otra cosa
+            Destroy(gameObject);
+        }
     }
 }
